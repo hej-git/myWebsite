@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>清风导航 </title>
+		<meta name="theme-color" content="#f9f9f9" />
+		<link rel='stylesheet'  href='/css/new/style.min.css' type='text/css' media='all' />
+		<link rel='stylesheet'  href='/css/new/all.min.css?ver=200805' type='text/css' media='all' />
+		<link rel='stylesheet'  href='/css/new/iconfont.css?ver=200805' type='text/css' media='all' />
+		<link rel='stylesheet'  href='/css/new/v4-shims.min.css?ver=200805' type='text/css' media='all' />
+		<link rel='stylesheet'  href='/css/new/bootstrap.min.css' type='text/css' media='all' />
+		<link rel='stylesheet'  href='/css/new/jquery.fancybox.min.css?ver=200805' type='text/css' media='all' />
+		<link rel='stylesheet'  href='/css/new/style.css?ver=200805' type='text/css' media='all' />
+		<link href="/layui/css/layui.css" rel="stylesheet" />
+		<script type='text/javascript' src='/js/jquery-1.11.0.min.js?ver=200805'></script>
+	</head>
+
+	<body data-rsssl=1 class="io-grey-mode">
+	<div id="loading">
+		<div id="preloader_3"></div>
+	</div>
+		<div class="page-container">
+			<div id="sidebar" class="sticky sidebar-nav fade" style="width: 220px;">
+				<div class="modal-dialog h-100 sidebar-nav-inner">
+					<div class="sidebar-logo border-bottom border-color">
+						<!-- logo -->
+						<div class="logo overflow-hidden">
+							<a href="/index" class="logo-expanded"> <img src="/images/logo.png" height="40" class="logo-light" alt="清风导航"> <img src="/images/logo.png" height="40" class="logo-dark d-none" alt="清风导航"> </a>
+							<a href="/index" class="logo-collapsed"> <img src="/images/logo2.png" height="40" class="logo-light" alt="清风导航"> <img src="/images/logo2.png" height="40" class="logo-dark d-none" alt="清风导航"> </a>
+						</div>
+						<!-- logo end -->
+					</div>
+					<div class="sidebar-menu flex-fill">
+						<div class="sidebar-scroll">
+							<div class="sidebar-menu-inner">
+								<ul>
+									#for( t :type)
+									<li class="sidebar-item">
+										<a href="javascript:;" class="my-a"> <i class="#(t.imgurl??'iconfont icon-tag') icon-fw icon-lg mr-2"></i> <span>#(t.title)</span> <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i> </a>
+										<ul>
+											#for(t1:t.children??)
+											<li>
+												<a href="#term-#(t1.id)" class="smooth"><span>#(t1.title)</span></a>
+											</li>
+											#end
+										</ul>
+
+									#end
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="border-top py-2 border-color">
+						<div class="flex-bottom">
+							<ul>
+								<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-271">
+									<a href="/ly" class="my-a"><i class="fa fa-pen-square icon-fw icon-lg mr-2"></i> <span>给我留言</span></a>
+								</li>
+								<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1827">
+									<a href="/yl"class="my-a"><i class="fa fa-send icon-fw icon-lg mr-2"></i> <span>友情链接</span></a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-content flex-fill">
+				<div id="header" class="page-header big sticky">
+					<div class="navbar navbar-expand-md">
+						<div class="container-fluid p-0">
+							<a href="/index" class="navbar-brand d-md-none"> <img src="/images/logo2.png" class="logo-light" alt="清风导航"> <img src="/images/logo2.png" class="logo-dark d-none" alt="清风导航"> </a>
+							<div class="collapse navbar-collapse order-2 order-md-1">
+								<div class="header-mini-btn"> <label> <input id="mini-button" type="checkbox" checked > <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" /> <path class="line--2" d="M0 50h80" /> <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45" /> </svg> </label> </div>
+
+								<ul class="navbar-nav site-menu mr-4">
+									<li id="menu-item-283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283 navliAvtive">
+										<a href="/index"><i class="fa fa-home icon-fw icon-lg mr-2"></i> <span>导航首页</span></a>
+									</li>
+									<li id="menu-item-271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-271">
+										<a href="/ly"><i class="fa fa-pen-square icon-fw icon-lg mr-2"></i> <span>给我留言</span></a>
+									</li>
+									<li id="menu-item-1827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1827">
+										<a href="/yl"><i class="fa fa-send icon-fw icon-lg mr-2"></i> <span>友情链接</span></a>
+									</li>
+								</ul>
+							</div>
+							<ul class="nav navbar-menu text-xs order-1 order-md-2">
+								<li class="nav-item d-md-none mobile-menu ml-4">
+									<a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-2x"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<script type='text/javascript'>
+					/* <![CDATA[ */
+					var theme = {
+						"ajaxurl": "/link/queryLink",
+						"order": "desc",
+						"formpostion": "top",
+						"defaultclass": "io-grey-mode",
+						"isCustomize": "1",
+						"icopng": ".png",
+						"urlformat": "1",
+						"customizemax": "10",
+						"newWindow": "1",
+						"lazyload": "1",
+						"minNav": "1",
+						"loading": "0",
+						"code":"home"
+					}; /* ]]> */
+				</script>
+				<div class="header-big bg-gradual canvas-fx mb-4">
+					<div class="s-search">
+						<div id="search" class="s-search mx-auto">
+							<div id="search-list" class="hide-type-list">
+								<div class="search-group group-a s-current">
+									<ul class="search-type">
+										<li><input checked="checked" zhannei="true" hidden id="type-zhannei" type="radio" name="type" data-placeholder="站内搜索"><label for="type-zhannei"><span class="text-muted"><span style="color:#666">站内</span></span></label></li>
+										<li><input hidden type="radio" zhannei="" name="type" id="type-baidu" value="https://www.baidu.com/s?wd=" data-placeholder="百度一下"><label for="type-baidu"><span class="text-muted"><span style="color:#4e6ef2">百度</span></span></label></li>
+										<li><input hidden type="radio" zhannei="" name="type" id="type-google" value="https://www.google.com/search?q=" data-placeholder="谷歌两下"><label for="type-google"><span class="text-muted"><span style="color:#3B83FA">G</span><span style="color:#F3442C">o</span><span style="color:#FFC300">o</span><span style="color:#4696F8">g</span><span style="color:#2CAB4E">l</span><span style="color:#F54231">e</span></span></label></li>
+										<li><input hidden type="radio" zhannei="" name="type" id="type-bing" value="https://www.zhihu.com/search?type=content&q=" data-placeholder="知乎者也"><label for="type-bing"><span class="text-muted"><span style="color:#0084ff">知乎</span></label></li>
+									</ul>
+								</div>
+							</div>
+							<div   class="super-search-fm"> <input type="text" value="" id="search-text" class="form-control smart-tips search-key" zhannei="true" placeholder="站内搜索" style="outline:0" autocomplete="off"> <button id="searchBtn" type="submit"><i class="iconfont icon-search"></i></button> </div>
+							<div class="card search-smart-tips" style="display: none">
+								<ul></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="content" class="content-site customize-site">
+
+					<div id="initContent">
+					#for(a:list)
+					<h4 class="text-gray text-lg"> <i class="site-tag  #(a.imgurl?? 'iconfont icon-tag')  icon-lg mr-1" id="term-#(a.id)"></i> #(a.title) </h4>
+					<!-- tab模式菜单 -->
+					<div class="d-flex flex-fill flex-tab">
+						<div class="overflow-x-auto">
+							<div class='slider_menu mini_tab ajax-list-home' sliderTab="sliderTab" data-id="#(a.id)">
+								<ul class="nav nav-pills menu" role="tablist">
+									#for(b:a.children??)
+									#if(for.index==0)
+									<li class="pagenumber nav-item">
+										<a id="term-#(b.id)" class="nav-link active" data-action="load_home_tab" data-taxonomy="favorites" data-id="#(b.id)">#(b.title)</a>
+									</li>
+									#else
+									<li class="pagenumber nav-item">
+										<a id="term-#(b.id)" class="nav-link" data-action="load_home_tab" data-taxonomy="favorites" data-id="#(b.id)">#(b.title)</a>
+									</li>
+									#end
+
+									#end
+								</ul>
+							</div>
+						</div>
+						<div class="flex-fill"></div>
+						<a class='btn-move tab-move text-xs ml-2' href='#' style='line-height:34px;display:none'>more+</a>
+					</div>
+					<!-- tab模式菜单 end -->
+					<div class="row ajax-#(a.id) mt-4" style="position: relative;">
+						#if(a.children.size()>0)
+							#for(c :a.children[0].children)
+							<div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a ajax-url">
+								<div class="url-body default">
+									<a href="/go?lkid=#(c.id??)" target="_blank" data-id="#(c.id)" class="card no-c mb-4 site-#(c.id)" data-toggle="tooltip" data-placement="bottom" title="#(c.remark)">
+										<div class="card-body">
+											<div class="url-content d-flex align-items-center">
+												<div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center"> <img class="lazy" src="#(c.imgurl??)"> </div>
+												<div class="url-info flex-fill">
+													<div class="text-sm overflowClip_1"> <strong>#(c.name)</strong> </div>
+													<p class="overflowClip_1 m-0 text-muted text-xs">#(c.remark)</p>
+												</div>
+											</div>
+										</div>
+									</a>
+									<a href="/go?lkid=#(c.id??)" class="togo text-center text-muted is-views" target="_blank"  data-toggle="tooltip" data-placement="right" title="直达"><i class="iconfont icon-goto"></i></a>
+								</div>
+							</div>
+							#end
+						#end
+
+					</div>
+					#end
+				</div>
+				<footer class="main-footer footer-type-1 text-xs">
+					<div id="footer-tools" class="d-flex flex-column">
+						<a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top"> <i class="iconfont icon-to-up"></i> </a>
+					</div>
+					<div class="footer-inner">
+						<div class="footer-text"> Copyright学渣导航 © 2020
+							<a href="http://beian.miit.gov.cn/">豫ICP备18036746号</a>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+		<div class="hide" id="div-hide">
+			<input type="hidden" value="#(term??)"id="term">
+		</div>
+		</div>
+		<script type='text/javascript' src='/js/new/popper.min.js?ver=200805'></script>
+		<script type='text/javascript' src='/js/new/theia-sticky-sidebar.js?ver=200805'></script>
+		<script type='text/javascript' src='/js/new/lazyload.min.js?ver=200805'></script>
+		<script type='text/javascript' src='/js/new/jquery.fancybox.min.js?ver=200805'></script>
+		<script type='text/javascript' src='/js/new/app.js?ver=200805'></script>
+		<script type='text/javascript' src='/js/new/wp-embed.min.js?ver=200805'></script>
+		<script type='text/javascript' src='/js/new/bootstrap.min.js?ver=200805'></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var siteWelcome = document.getElementById('loading');
+				siteWelcome.classList.add('close');
+				setTimeout(function () {
+					siteWelcome.remove();
+				}, 600);
+			});</script>
+	</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>给我留言 | 清风导航</title>
+    <meta name="theme-color" content="#f9f9f9"/>
+    <meta property="og:title" content="给我留言 | 清风导航">
+    <link rel='stylesheet' href='/css/new/style.min.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/new/all.min.css?ver=200805' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/new/iconfont.css?ver=200805' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/new/v4-shims.min.css?ver=200805' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/new/bootstrap.min.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/new/jquery.fancybox.min.css?ver=200805' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/new/style.css?ver=200805' type='text/css' media='all'/>
+    <link href="/css/new/liuyan.css?ver=200805" rel="stylesheet"/>
+    <script type='text/javascript' src='/js/jquery-1.11.0.min.js'></script>
+</head>
+<body class="io-white-mode">
+<div id="loading">
+    <div id="preloader_3"></div>
+</div>
+<div class="page-container">
+    <div id="sidebar" class="sticky sidebar-nav fade" style="width: 220px;">
+        <div class="modal-dialog h-100 sidebar-nav-inner">
+            <div class="sidebar-logo border-bottom border-color">
+                <!-- logo -->
+                <div class="logo overflow-hidden">
+                    <a href="/index" class="logo-expanded"> <img src="/images/logo.png" height="40" class="logo-light"
+                                                                 alt="清风导航"> <img src="/images/logo.png" height="40"
+                                                                                  class="logo-dark d-none" alt="清风导航">
+                    </a>
+                    <a href="/index" class="logo-collapsed"> <img src="/images/logo2.png" height="40" class="logo-light"
+                                                                  alt="清风导航"> <img src="/images/logo2.png" height="40"
+                                                                                   class="logo-dark d-none" alt="清风导航">
+                    </a>
+                </div>
+                <!-- logo end -->
+            </div>
+            <div class="sidebar-menu flex-fill">
+                <div class="sidebar-scroll">
+                    <div class="sidebar-menu-inner">
+                        <ul>
+                            #for( t :type)
+                            <li class="sidebar-item">
+                                <a href="javascript:;" class="my-a"> <i
+                                        class="#(t.imgurl??'iconfont icon-tag') icon-fw icon-lg mr-2"></i> <span>#(t.title)</span>
+                                    <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i> </a>
+                                <ul>
+                                    #for(t1:t.children??)
+                                    <li>
+                                        <a href="/index?term=term-#(t1.id)" class="smooth"><span>#(t1.title)</span></a>
+                                    </li>
+                                    #end
+                                </ul>
+
+                                #end
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top py-2 border-color">
+                <div class="flex-bottom">
+                    <ul>
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-271">
+                            <a href="/ly" class="my-a"><i class="fa fa-pen-square icon-fw icon-lg mr-2"></i> <span>给我留言</span></a>
+                        </li>
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1827">
+                            <a href="/yl"class="my-a"><i class="fa fa-send icon-fw icon-lg mr-2"></i> <span>友情链接</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content flex-fill page">
+        <div id="header" class="page-header big sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0">
+                    <a href="/index" class="navbar-brand d-md-none"> <img src="/images/logo2.png" class="logo-light"
+                                                                          alt="清风导航"> <img src="/images/logo2.png"
+                                                                                           class="logo-dark d-none"
+                                                                                           alt="清风导航"> </a>
+                    <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn"><label> <input id="mini-button" type="checkbox" checked>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"/>
+                                <path class="line--2" d="M0 50h80"/>
+                                <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"/>
+                            </svg>
+                        </label></div>
+                        <ul class="navbar-nav site-menu mr-4">
+                            <li id="menu-item-283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283 ">
+                                <a href="/index"><i class="fa fa-home icon-fw icon-lg mr-2"></i> <span>导航首页</span></a>
+                            </li>
+                            <li id="menu-item-271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-271 navliAvtive">
+                                <a href="/ly"><i class="fa fa-pen-square icon-fw icon-lg mr-2"></i> <span>给我留言</span></a>
+                            </li>
+                            <li id="menu-item-1827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1827">
+                                <a href="/yl"><i class="fa fa-send icon-fw icon-lg mr-2"></i> <span>友情链接</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2">
+                        <li class="nav-item d-md-none mobile-menu ml-4">
+                            <a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i
+                                    class="iconfont icon-classification icon-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type='text/javascript'>
+            /* <![CDATA[ */
+            var theme = {
+                "ajaxurl": "/link/queryLink",
+                "order": "desc",
+                "formpostion": "top",
+                "defaultclass": "io-grey-mode",
+                "isCustomize": "1",
+                "icopng": ".png",
+                "urlformat": "1",
+                "customizemax": "10",
+                "newWindow": "1",
+                "lazyload": "1",
+                "minNav": "1",
+                "loading": "0",
+                "code": "ly"
+            }; /* ]]> */
+        </script>
+        <div id="content" class="container my-4 my-md-5">
+            <div class="panel card">
+                <div class="card-body">
+                    <div class="panel-header mb-4"><h1 class="h3">给我留言</h1></div>
+                    <div class="panel-body mt-2">
+                        欢迎大家来到清风导航留言，有需要交换友链、分享网站资源、提友好建议和意见的朋友们可以在下方给我们留言。也可以给我写信,邮箱地址:180825608@qq.com
+                    </div>
+                </div>
+            </div> <!-- comments -->
+            <div id="comments" class="comments"><h1 id="comments-list-title" class="comments-title h5 mx-1 my-4"><i
+                    class="iconfont icon-comment"></i> <span class="noticom"> <a
+                    href="https://www.24kdh.com/liuyan#comments" class="comments-title"><span id="total">#(data.total)</span> 条评论</a> </span></h1>
+                <div class="card">
+                    <div class="card-body">
+                        <div id="liuyanDiv">
+                            <div id="respond" class="comment-respond">
+                                <form id="respondForm" class="text-sm mb-4">
+                                    <div class="visitor-avatar d-flex flex-fill mb-2">
+                                    </div>
+                                    <div class="comment-textarea mb-3">
+                                        <textarea name="mcontent" id="mcontent" class="form-control"maxlength="1000" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+                                    </div>
+                                    <div id="comment-author-info" class="row row-sm">
+                                        <div class="col-sm-6 col-lg-4 mb-3">
+                                            <input type="text" name="name" id="name"maxlength="22" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4 mb-3">
+                                            <input type="text" name="email" id="email"maxlength="22" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3"/>
+                                        </div>
+                                    </div>
+                                    <div class="com-footer text-right">
+                                        <input type="hidden" name="commentid" id="commentid" value="">
+                                        <a rel="nofollow" id="cancel-comment-reply-link" style="display: none;"
+                                           href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+                                        <input class="btn btn-dark custom_btn-d" name="submit" type="button" id="submit"
+                                               tabindex="5" value="发表评论"/>
+                                    </div>
+                                </form>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div id="loading-comments"><span></span></div>
+                        <ul class="comment-list">
+                           #for(l:data.list)
+                            <li class="comment even thread-even depth-1 comment" id="li-comment-#(l.id)">
+                                <div id="comment-#(l.id)" dataid="#(l.id)" class="comment_body d-flex flex-fill">
+                                    <div class="profile mr-2 mr-md-3">
+                                        <img alt='#(l.name)' src='#(l.imgurl??)' class='avatar avatar-96 photo' height='96' width='96'/></div>
+                                    <section class="comment-text d-flex flex-fill flex-column">
+                                        <div class="comment-info d-flex align-items-center mb-1">
+                                            <div class="comment-author text-sm"><span>#(l.name)</span></div>
+                                        </div>
+                                        <div class="comment-content d-inline-block text-sm"><p>#(l.mcontent)</p> <br/></div>
+                                        <div class="d-flex flex-fill text-xs text-muted pt-2">
+                                            <div class="comment-meta">
+                                                <div class="info">
+                                                    <time itemprop="datePublished" datetime="#(l.createtime)">
+                                                        #(l.createtimestr)
+                                                    </time>
+                                                </div>
+                                            </div>
+                                            <div class="flex-fill"></div>
+                                            <a rel='nofollow' class='comment-reply-link' href='javascript:;'
+                                               aria-label='回复给'>回复</a></div>
+                                    </section>
+                                </div>
+                                #if(l.children.size()>0)
+                                <ul class="children">
+                                    #for(c:l.children)
+                                    <li class="comment byuser bypostauthor odd alt depth-2 comment" id="li-comment-609">
+                                        <div dataid="#(l.id)" class="comment_body d-flex flex-fill">
+                                            <div class="profile mr-2 mr-md-3">
+                                                <img alt="#(c.name)" src="#(c.imgurl??)" class="avatar avatar-96 photo" height="96" width="96">
+                                            </div>
+                                            <section class="comment-text d-flex flex-fill flex-column">
+                                                <div class="comment-info d-flex align-items-center mb-1">
+                                                    <div class="comment-author text-sm">
+                                                        #(c.name)
+                                                    </div>
+                                                </div>
+                                                <div class="comment-content d-inline-block text-sm"><p>#(c.mcontent)</p></div>
+                                                <div class="d-flex flex-fill text-xs text-muted pt-2">
+                                                    <div class="comment-meta">
+                                                        <time itemprop="datePublished" datetime="#(l.createtime)">
+                                                            #(c.createtimestr)
+                                                        </time>
+                                                    </div>
+                                                    <div class="flex-fill"></div>
+                                                    <a rel="nofollow" href="javascript:;" class="comment-reply-link">回复</a></div>
+                                            </section>
+                                        </div>
+                                    </li><!-- #comment-## -->
+                                    #end
+                                </ul>
+                                #end
+                            </li><!-- #comment-## -->
+                            #end
+                        </ul>
+                        <nav id="comments-navi" class="text-center my-3">
+                            #if(data.page>1)
+                             <a class="prev page-numbers" href="/ly?p=#(data.page-1)"><i class="iconfont icon-arrow-l"></i></a>
+                            #end
+                            #for(a:data.pageList)
+                                #if(a==(data.page+""))
+                            <span aria-current="page" class="page-numbers current">#(a)</span>
+                                #else
+                            <a class="page-numbers" href="/ly?p=#(a)">#(a)</a>
+                                #end
+                            #end
+                            #if(data.page<data.maxPage)
+                            <a class="next page-numbers" href="/ly?p=#(data.page+1)"><i class="iconfont icon-arrow-r"></i></a>
+                            #end
+                        </nav>
+                    </div>
+                </div>
+            </div><!-- comments end -->
+            <footer class="main-footer footer-type-1 text-xs">
+                <div id="footer-tools" class="d-flex flex-column">
+                    <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top"> <i
+                            class="iconfont icon-to-up"></i> </a>
+                </div>
+                <div class="footer-inner">
+                    <div class="footer-text"> Copyright学渣导航 © 2020
+                        <a href="http://beian.miit.gov.cn/">豫ICP备18036746号</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="hide" id="my-hide">
+            <!-- 回复评论-->
+                <li class="comment byuser bypostauthor odd alt depth-2 comment li-comment my-li-hf">
+                    <div class="comment_body d-flex flex-fill">
+                        <div class="profile mr-2 mr-md-3">
+                            <img alt="Admin" src="" class="avatar avatar-96 photo" height="96" width="96">
+                        </div>
+                        <section class="comment-text d-flex flex-fill flex-column">
+                            <div class="comment-info d-flex align-items-center mb-1">
+                                <div class="comment-author text-sm">
+                                    Admin
+                                </div>
+                            </div>
+                            <div class="comment-content d-inline-block text-sm"><p>已添加</p></div>
+                            <div class="d-flex flex-fill text-xs text-muted pt-2">
+                                <div class="comment-meta">
+                                    <div class="info">
+                                        <time>3个月前</time>
+                                    </div>
+                                </div>
+                                <div class="flex-fill"></div>
+                                <a rel="nofollow" href="javascript:;" class="comment-reply-link">回复</a></div>
+                        </section>
+                    </div>
+                </li>
+            <!-- 回复评论结束-->
+            <!-- 评论-->
+            <li class="comment even thread-even depth-1 comment my-li-pl" >
+                <div  class="comment_body d-flex flex-fill">
+                    <div class="profile mr-2 mr-md-3">
+                        <img alt='' src='' class='avatar avatar-96 photo' height='96' width='96'/></div>
+                    <section class="comment-text d-flex flex-fill flex-column">
+                        <div class="comment-info d-flex align-items-center mb-1">
+                            <div class="comment-author text-sm"><span>as</span></div>
+                        </div>
+                        <div class="comment-content d-inline-block text-sm"><p>hhhhhhh</p> <br/></div>
+                        <div class="d-flex flex-fill text-xs text-muted pt-2">
+                            <div class="comment-meta">
+                                <div class="info">
+                                    <time>
+                                        5分钟前
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="flex-fill"></div></div>
+                    </section>
+                </div>
+            </li>
+            <!--评论结束-->
+
+        </div>
+    </div>
+</div>
+        <script type='text/javascript' src='/js/new/popper.min.js?ver=200805'></script>
+        <script type='text/javascript' src='/js/new/bootstrap.min.js?ver=200805'></script>
+        <script type='text/javascript' src='/js/new/theia-sticky-sidebar.js?ver=200805'></script>
+        <script type='text/javascript' src='/js/new/lazyload.min.js?ver=200805'></script>
+        <script type='text/javascript' src='/js/new/jquery.fancybox.min.js?ver=200805'></script>
+        <script type="text/javascript" src="/layui/layui.all.js"></script>
+        <script type="text/javascript" src="/js/myLayui.js"></script>
+        <script type='text/javascript' src='/js/new/app.js?ver=200805'></script>
+        <script type='text/javascript' src='/js/new/liuyan.js?ver=200805'></script>
+        <script type='text/javascript' src='/js/new/wp-embed.min.js?ver=200805'></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+            var siteWelcome = document.getElementById('loading');
+            siteWelcome.classList.add('close');
+            setTimeout(function () {
+                siteWelcome.remove();
+            }, 600);
+        });</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类别设置</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <style type="text/css">
+        .div-table{
+            width: 96%;
+            margin: 1% 2%;
+        }
+        .searchRight {
+            float: right;
+            text-align: left;
+            margin-right: 2%;
+        }
+        .searchLeft {
+            float: left;
+            margin-left: 2%;
+        }
+    </style>
+</head>
+<body>
+<div class="div-body layui-form">
+    <input type="hidden" id="pid" value="#(pid??)">
+    <div class="searchLeft ">
+        <button class="layui-btn layui-btn-sm" onclick="add()">新  增</button>
+    </div>
+    <div class="searchRight">
+            <div class="layui-inline">
+                <label class="layui-form-label">类别名称:</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" id="name" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <button class="layui-btn layui-btn-sm" onclick="search()">查询</button>
+            <button class="layui-btn layui-btn-sm" onclick="rSearch(this)">重置</button>
+    </div>
+<div class="div-table">
+    <table class="layui-table" id="table" lay-filter="myTable"></table>
+</div>
+
+</div>
+
+
+
+<script type="text/html" id="opt">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+</script>
+<script type="text/javascript" src="/js/jquery-1.11.0.min.js" ></script>
+<script type="text/javascript" src="/layui/layui.all.js"></script>
+<script type="text/javascript" src="/js/myLayui.js"></script>
+<script type="text/javascript" src="/js/type_list.js"></script>
+</body>
+</html>

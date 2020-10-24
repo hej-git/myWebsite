@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <style type="text/css">
+        .layui-form-item{
+            margin:10px 2%;
+        }
+    </style>
+</head>
+<body>
+<form class="layui-form" id="myForm" lay-filter="example">
+    <input type="hidden" name="id" value="#(id??)">
+    <input type="hidden" name="pid" value="#(pid??type.pid)">
+    <div class="layui-form-item">
+        <label class="layui-form-label">类别名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="name"  value="#(type.name??)" autocomplete="off" placeholder="请输入类别名称" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">(图标/图片)地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="imgurl"  value="#(type.imgurl??)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">排序</label>
+        <div class="layui-input-block">
+            <input type="text" name="showorder"  value="#(type.showorder??)" autocomplete="off" oninput = "value=value.replace(/[^\d]/g,'')" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入备注" class="layui-textarea" name="remark">#(type.remark??)</textarea>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="/js/jquery-1.11.0.min.js" ></script>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/myLayui.js"></script>
+<script type="text/javascript" src="/js/type_add.js"></script>
+</body>
+</html>

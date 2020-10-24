@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <style type="text/css">
+        #tree,#list{
+            height: 100%;
+            width: 100%;
+        }
+        html,body,.div-body,.my-table{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="div-body layui-form">
+    <table class="my-table">
+        <tr>
+        <td width="200px">
+            <iframe id="tree" name="tree" src="/type/typeTree?type=type"frameborder="no" scrolling="no"></iframe>
+        </td>
+        <td>
+            <iframe id="list" name="list" src="/type/index" frameborder="no" ></iframe>
+        </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript" src="/js/jquery-1.11.0.min.js" ></script>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/myLayui.js"></script>
+</body>
+</html>

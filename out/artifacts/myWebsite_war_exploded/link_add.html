@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <style type="text/css">
+        .layui-form-item{
+            margin:10px 2%;
+        }
+        .layui-upload-img{
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<form class="layui-form" id="myForm" lay-filter="example">
+    <input type="hidden" name="id" value="#(id??)">
+    <input type="hidden" name="typeid" value="#(typeid??link.typeid??)">
+    <div class="layui-form-item">
+        <label class="layui-form-label">链接名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" lay-verify="title" value="#(link.name??)" autocomplete="off" placeholder="请输入链接名称" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">链接地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="link" lay-verify="title" value="#(link.link??)" autocomplete="off" placeholder="请输入链接地址" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">链接图标</label>
+        <div class="layui-input-block">
+            <div class="layui-upload">
+                <button type="button" class="layui-btn" id="fileBtn"><i class="layui-icon">&#xe67c;</i>上传图片</button>
+                <div class="layui-upload-list">
+                    <img class="layui-upload-img" id="demo1" src="#(link.imgurl??'/images/link.png')">
+                    <p id="demoText"></p>
+                    <input type="text" name="imgurl" id="imgurl" value="#(link.imgurl??)" class="layui-input" autocomplete="off">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入备注" class="layui-textarea" name="remark">#(link.remark??)</textarea>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="/js/jquery-1.11.0.min.js" ></script>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/myLayui.js"></script>
+<script type="text/javascript" src="/js/link_add.js"></script>
+</body>
+</html>
